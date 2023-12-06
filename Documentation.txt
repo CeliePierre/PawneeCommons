@@ -30,7 +30,7 @@ Finally the workload was split one last time. Célie was the one to work with th
 Conclusion
 
 
-Sarah
+Sarah’s Conclusion
 I learned that the processes of creating a database are far more complex than I first thought. There is a lot of thought that goes into creating a database. I learned that SQL is incredibly useful for a variety of tasks. A few examples are retrieving, inserting, updating, and so on. I also learned that scraping and cleaning information is difficult and time-consuming. I’ll have to look into better methods in the future. Overall this project was helpful in expanding my knowledge and helped me gain the tools I need for making a database.
 
 
@@ -52,9 +52,9 @@ Célie’s contribution listing:
 * Part 3: Front-end user interface, additional SQL modifications, made edits to other team members code for GUI and MySQL compatibility
 
 
-Reihaneh
+Reihaneh’s Conclusion
 In the first steps, I learned an overview of databases to design a system infrastructure more accurately and pay attention to all aspects of relationships. Sometimes a simple system can involve complicated relationships.  In the second part, gathering data and cleaning up for inserting on a system based on ER makes new insights into critical roles in ER Design and this part is so time consuming for making suitable data in all aspects of the database.
-In this part, I start using AI methods. It is really interesting to work with real data and databases and concepts like sentence transformers, opensearch methods are so useful these days so I think these parts are more effective for me.
+In the second part, I start using AI methods. It is really interesting to work with real data and databases and concepts like sentence transformers, opensearch methods are so useful these days so I think these parts are more effective for me.
 In the third part, I focus on search functionality for two topics. Evaluation is an advanced topic in MySQL. Knowing how to use the information in Mysql for analysis is valuable to me.  And the transactions worked. It is really interesting to see what happened in the background and create high-quality code in all aspects. Another important part of this project is working with a team and improving skills in how to divide tasks in a project and manage time based on goals.
 
 
