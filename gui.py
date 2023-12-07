@@ -2,7 +2,7 @@
 Célie Pierre
 COS 457 Database Systems
 Database Systems Project Part 3
-December 4, 2023
+December 6, 2023
 
 File: gui.py
 """
@@ -356,9 +356,7 @@ def make_window(theme):
         [sg.Text('', size=(100, 10), key='-SEARCH TEXT-')]
     ]
 
-    data = []
-    headings = []
-    update_layout = [
+    insert_layout = [
         [sg.Text(f'Insert (with trigger and rollback)\n\n'
                  f'Add a character:')],
         [sg.Text('Enter a new character\'s first name:'), sg.InputText(key='trig_cFirstName_in')],
@@ -367,8 +365,29 @@ def make_window(theme):
         [sg.Button('Add Character')],
         [sg.Text('')],
         [sg.Text('', size=(100, 10), key='-UPDATE TEXT-')]
-
     ]
+
+    uPerson_layout = [
+        [sg.Text(f'Transaction (with rollback)\n\n'
+                 f'Update a person\'s job:')],
+        [sg.Text('Enter a person\'s ID number:'), sg.InputText(key='tUpdateJob_pID_in')],
+        [sg.Text('Enter an episode the person worked on:'), sg.InputText(key='tUpdateJob_eID_in')],
+        [sg.Text('Enter the job title:'), sg.InputText(key='tUpdateJob_job_in')],
+        [sg.Text('')],
+        [sg.Button('Update Job')],
+        [sg.Text('')],
+        [sg.Text('', size=(100, 10), key='-UPDATE TEXT P-')]
+    ]
+
+    update_layout = [
+        [sg.TabGroup([[
+            sg.Tab('Insert Character', insert_layout, key='-INSERT CHARACTER TAB-'),
+            sg.Tab('Update Person', uPerson_layout, key='-UPDATE PERSON TAB-')]],
+            key='-BROWSE TAB-', expand_x=True, expand_y=True),
+        ],
+        [sg.Text('', size=(100, 10), key='-BROWSE TEXT-')],
+    ]
+
 
     layout = [[sg.MenubarCustom(menu_def, key='-MENU-', font='Courier 15', tearoff=True)],
               [sg.Text('Pawnee Commons', size=(38, 1), justification='center', font=("Helvetica", 16),
@@ -620,6 +639,21 @@ def main():
                 progress_bar.update(current_count=i + 1)
             window['-SENTENCE TEXT-'].update(sentence_results)
             window['-PROGRESS TEXT-'].update('')
+
+        if event == 'Update Job':
+            t_update_job_in = [values['tUpdateJob_job_in'], values['tUpdateJob_pID_in'], values['tUpdateJob_eID_in']]
+            print("t_update_job_in")
+            print(t_update_job_in)
+            tUpdateJob_proc_results = get_procedure(conn, 't_update_job', t_update_job_in)
+            tUpdateJob_results = tUpdateJob_proc_results[1].get('Result')
+            if tUpdateJob_results == 'Transaction Committed':
+                window['-UPDATE TEXT P-'].update(f'Insert successful. {tUpdateJob_results}.\n\n'
+                                               f'Person ID: {t_update_job_in[1]}\n'
+                                               f'Episode ID: {t_update_job_in[2]}\n'
+                                               f'Job title: {t_update_job_in[0]}')
+            else:
+                window['-UPDATE TEXT P-'].update(f'Insert failed. {tUpdateJob_results}\n'
+                                               f'Please try again.')
             print("Done")
 
     window.close()
