@@ -1,4 +1,4 @@
-```markdown
+
 # README: VectorsGenerate
 
 This script performs sentence embedding and enables the search for similar sentences within a collection. It utilizes the [Sentence Transformers](https://www.sbert.net/) library for creating embeddings.
