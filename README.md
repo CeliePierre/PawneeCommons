@@ -139,7 +139,7 @@ This will perform a semantic search for lines similar to "Ron Swanson" in the tr
 
 Feel free to customize the code according to your specific use case.
 
-# README: Database Character Management
+# README: Trigger (Database Character Management)
 
 This Python script provides functionality for managing character information in a MySQL database. It includes features for adding new character names, checking if a name already exists, and retrieving information about a character from the database.
 
@@ -195,7 +195,7 @@ Replace 'script_name.py' with the actual name of your Python script.
 ## Example
 
 ```bash
-python character_management.py
+python trigger.py
 ```
 
 Follow the on-screen prompts to add or check character names in the database.
