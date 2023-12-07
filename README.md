@@ -6,7 +6,6 @@
 - Reihaneh Maarefdoust
 
 ## COS 457 Database Systems
-Database Systems Project Part 3: Documentation
 December 6, 2023
 
 ## Introduction 
