@@ -1,7 +1,7 @@
 
 # README: Web Scraping
 
-## Summary
+## Introduction
 
 This code takes in a website provided and performs click events to scrape all the cast information. The gathered information is organized and sorted into respective CSV tables, including Person, Character, and Plays. Prior information from Person-writer&director - Sheet1.csv is also formatted and added to the CSV tables.
 
